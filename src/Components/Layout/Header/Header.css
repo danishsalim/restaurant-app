@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+header{
+    display: flex;
+}
+header h1{
+    font-size: 1.5em;
+}
+.container{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(182, 26, 26);
+    color: white;
+
+}
+.container .cartContainer{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 10rem;
+    padding: 10px 20px;
+    background-color: rgb(100, 17, 17);
+    border-radius: 20px;
+
+}
+.container .cartContainer .itemCount{
+    background-color: rgb(173, 23, 23);
+    width: 1.8rem;
+    padding-left: 0.6rem;
+    border-radius: 60%;
+}
