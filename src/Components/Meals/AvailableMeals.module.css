@@ -1,0 +1,28 @@
+.meals-showing-container{
+    display: flex;
+    flex-flow: column wrap;
+    background-color: white;
+    border-radius: 20px;
+    width: 50%;
+    margin: 20px 0;
+}
+.meals-showing-container .mealsShowing{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-bottom:2px solid rgb(187, 175, 175) ;
+    margin-left: 10px ;
+    padding: 20px;
+    font-size: 15px;
+}
+.meals-showing-container .mealsShowing:last-child{
+    border-bottom: none;
+}
+.meals-showing-container .mealsShowing h4{
+    margin: 0px;
+}
+.meals-showing-container .mealsShowing .price{
+    color: rgb(194, 9, 9);
+    font-weight:bold;
+}
