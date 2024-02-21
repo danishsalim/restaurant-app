@@ -11,9 +11,10 @@ header h1{
 .container{
     display: flex;
     width: 100%;
+    height: 5rem;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(182, 26, 26);
+    background-color: rgb(119, 17, 17);
     color: white;
 
 }
@@ -22,15 +23,29 @@ header h1{
     flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
-    width: 10rem;
+    /* width: 10rem; */
+    gap: 40px;
     padding: 10px 20px;
-    background-color: rgb(100, 17, 17);
+    background-color:brown;
     border-radius: 20px;
 
 }
 .container .cartContainer .itemCount{
-    background-color: rgb(173, 23, 23);
+    background-color: rgb(129, 31, 31);
     width: 1.8rem;
     padding-left: 0.6rem;
     border-radius: 60%;
 }
+.mainImage {
+    width: 100%;
+    height: 25rem;
+    z-index: 0;
+    overflow: hidden;
+  }
+  
+.mainImage img {
+    width: 110%;
+    height: 100%;
+    object-fit: cover;
+    /* transform: rotateZ(-5deg) translateY(-4rem) translateX(-1rem); */
+    }
