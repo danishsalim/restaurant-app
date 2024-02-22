@@ -1,25 +1,51 @@
-import React from 'react'
-import classes from "./AvailableMeals.module.css"
-const meals = [
-    {mealName:"Sushi",desc:"Finest fish and veggies",price:"$22.99"},
-    {mealName:"Schnitzel",desc:"A german specialty!",price:"$16.50"},
-    {mealName:"Barbecue Burger",desc:"American, raw, meaty",price:"$12.99$"},
-    {mealName:"Green Bowl",desc:"Healthy. and green...",price:"$20.99"},
-]
-function AvailableMeals() {
-  return (
-    <>
-        <div className={classes['meals-showing-container']}>
-            {meals.map((meal)=>(
-                <div className={classes.mealsShowing}> 
-                      <span><h4>{meal.mealName}</h4></span> 
-                      <span>{meal.desc}</span>
-                      <span className={classes.price}>{meal.price} </span> 
-                </div>
-            ))}
-        </div>
-    </>
-  )
-}
+import Card from '../Ui/Card';
+import MealItem from './MealItem/MealItem';
+import classes from './AvailableMeals.module.css';
 
-export default AvailableMeals
+const DUMMY_MEALS = [
+  {
+    id: 'm1',
+    name: 'Sushi',
+    description: 'Finest fish and veggies',
+    price: 22.99,
+  },
+  {
+    id: 'm2',
+    name: 'Schnitzel',
+    description: 'A german specialty!',
+    price: 16.5,
+  },
+  {
+    id: 'm3',
+    name: 'Barbecue Burger',
+    description: 'American, raw, meaty',
+    price: 12.99,
+  },
+  {
+    id: 'm4',
+    name: 'Green Bowl',
+    description: 'Healthy...and green...',
+    price: 18.99,
+  },
+];
+
+const AvailableMeals = () => {
+  const mealsList = DUMMY_MEALS.map((meal) => (
+    <MealItem
+      key={meal.id}
+      name={meal.name}
+      description={meal.description}
+      price={meal.price}
+    />
+  ));
+
+  return (
+    <section className={classes.meals}>
+      <Card>
+        <ul>{mealsList}</ul>
+      </Card>
+    </section>
+  );
+};
+
+export default AvailableMeals;
