@@ -1,16 +1,34 @@
+import { useState } from "react";
 import CartContext from "./cart-context";
 
-const CartProvider = (props) => {
-   const addItemTOCart = ()=>{
 
-   }
-   const removeItemFromCart = ()=>{
-    
+
+const CartProvider = (props) => {
+  const [items,setItems] = useState([]);
+
+    const addItemTOCart = (id)=>{
+        
+    }
+    const removeItemFromCart = (id)=>{
+      for(let i=0;i<items.length;i++)
+      {
+        if(id==items[i]['id'] && items[i]['quantity']>1){
+          setItems((prev)=>{
+            prev[i]['quantity']=prev[i]['quantity']-1
+            return [...prev]
+          }) 
+          break;
+        }
+        else if(items[i]['quantity']<=1)
+        {
+          setItems((prev)=>prev.filter((item)=>item.id!=id))
+        }
+      }
    }
    
    const cartContext={
-    items:[],
-    totalItems:0,
+    items:items,
+    setItems:setItems,
     addItem:addItemTOCart,
     removeItem:removeItemFromCart,
    }
